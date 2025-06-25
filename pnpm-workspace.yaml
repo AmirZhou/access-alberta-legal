@@ -1,0 +1,10 @@
+# access-alberta-legal/pnpm-workspace.yaml
+packages:
+  # All packages in direct subdirectories of 'packages/'
+  - "packages/*"
+  # A specific application in the 'apps/' directory
+  - "apps/my-app"
+  # Or, all packages in any subdirectory within 'packages/' (nested)
+  # - 'packages/**'
+  # Exclude specific directories
+  - "!packages/ignore-me"
