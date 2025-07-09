@@ -26,6 +26,20 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.12.3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+
+      - name: Verify pnpm lockfile
+        run: pnpm install --frozen-lockfile --dry-run
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 

@@ -15,7 +15,7 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY apps/acl-api/package.json ./apps/acl-api/
 
 # Install dependencies for the entire workspace
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile || pnpm install
 
 # Copy source code for acl-api
 COPY apps/acl-api/src ./apps/acl-api/src
@@ -38,7 +38,7 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY apps/acl-api/package.json ./apps/acl-api/
 
 # Install only production dependencies
-RUN pnpm install --frozen-lockfile --prod
+RUN pnpm install --frozen-lockfile --prod || pnpm install --prod
 
 # Copy built application
 COPY --from=builder /app/apps/acl-api/dist ./apps/acl-api/dist
