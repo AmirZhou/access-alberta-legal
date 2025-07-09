@@ -2,8 +2,8 @@
 packages:
   # All packages in direct subdirectories of 'packages/'
   - "packages/*"
-  # A specific application in the 'apps/' directory
-  - "apps/my-app"
+  # Applications in the 'apps/' directory
+  - "apps/acl-api"
   # Or, all packages in any subdirectory within 'packages/' (nested)
   # - 'packages/**'
   # Exclude specific directories
